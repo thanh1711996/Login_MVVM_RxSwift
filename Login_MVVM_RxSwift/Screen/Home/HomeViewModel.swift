@@ -24,9 +24,8 @@ class HomeViewModel {
     var fetchDataTime = [0.5, 1, 1.5]
     
     // init
-    init(_ data: AccountData) {
+    init() {
         disposeBag = DisposeBag()
-        accountData.accept(data)
     }
     
     // handle event logout

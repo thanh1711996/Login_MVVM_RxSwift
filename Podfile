@@ -10,4 +10,6 @@ target 'Login_MVVM_RxSwift' do
     pod 'RxSwift', '6.1.0'
     pod 'RxCocoa', '6.1.0'
 
+    pod 'NKVPhonePicker', '2.1.0'
+    
 end

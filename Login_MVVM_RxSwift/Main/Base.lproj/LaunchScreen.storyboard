@@ -16,46 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVK-dP-z7A">
-                                <rect key="frame" x="172.5" y="348" width="69" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to demo app" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBR-zS-rbY">
-                                <rect key="frame" x="20" y="404" width="374" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-fj-hsh">
-                                <rect key="frame" x="147" y="189" width="120" height="117.5"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="L1N-gz-j0W"/>
-                                </constraints>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keno_logo" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-fj-hsh">
+                                <rect key="frame" x="87" y="412" width="240" height="72"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MVVM + rxSwift" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcj-1o-nQg">
-                                <rect key="frame" x="12" y="440" width="390" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OSV-fj-hsh" firstAttribute="width" secondItem="OSV-fj-hsh" secondAttribute="height" id="11r-Dx-InH"/>
-                            <constraint firstItem="TVK-dP-z7A" firstAttribute="top" secondItem="OSV-fj-hsh" secondAttribute="bottom" constant="40" id="4C0-KY-41w"/>
-                            <constraint firstAttribute="trailing" secondItem="xcj-1o-nQg" secondAttribute="trailing" constant="12" id="8KU-RM-NAT"/>
-                            <constraint firstItem="xcj-1o-nQg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="FZU-90-kWt"/>
-                            <constraint firstItem="TVK-dP-z7A" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RD8-N4-Bsk"/>
-                            <constraint firstItem="CBR-zS-rbY" firstAttribute="top" secondItem="TVK-dP-z7A" secondAttribute="bottom" constant="20" id="ShV-lf-r4e"/>
-                            <constraint firstItem="CBR-zS-rbY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="fI2-8D-IcY"/>
-                            <constraint firstItem="OSV-fj-hsh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="fML-Ut-nMf"/>
-                            <constraint firstItem="xcj-1o-nQg" firstAttribute="top" secondItem="CBR-zS-rbY" secondAttribute="bottom" constant="12" id="krk-tu-oQB"/>
-                            <constraint firstItem="CBR-zS-rbY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="m4Q-xR-9K5"/>
-                            <constraint firstItem="OSV-fj-hsh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" priority="999" constant="-200" id="p8M-sl-avA"/>
+                            <constraint firstItem="OSV-fj-hsh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="p8M-sl-avA"/>
                             <constraint firstItem="OSV-fj-hsh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vAA-9p-BEt"/>
                         </constraints>
                     </view>
@@ -66,6 +36,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="swift" catalog="system" width="128" height="106"/>
+        <image name="keno_logo" width="240" height="72"/>
     </resources>
 </document>

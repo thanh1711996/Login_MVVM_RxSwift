@@ -64,10 +64,7 @@ extension RegisterViewController {
                 case .loaderEnd:
                     hideLoading()
                     break
-                case .updateDataModel(let data):
-                    if let data = data as? AccountData {
-                        pushToHomeViewController(data)
-                    }
+                case .updateDataModel:
                     break
                 case .error(let message):
                     showAlert(message: message)
@@ -142,8 +139,8 @@ extension RegisterViewController {
 // MARK: handle push view controller
 extension RegisterViewController {
     
-    func pushToHomeViewController(_ data: AccountData) {
-        let vc = HomeViewController(data)
+    func pushToHomeViewController() {
+        let vc = HomeViewController()
         pushToViewController(vc)
     }
     

@@ -98,3 +98,17 @@ extension UIView {
         }
     }
 }
+
+protocol textFieldDeleteBackward: class {
+    func deleteBackward()
+}
+
+class UITextFieldModern: UITextField {
+    
+    weak var delegateBackward: textFieldDeleteBackward?
+    
+    override func deleteBackward() {
+        super.deleteBackward()
+        self.delegateBackward?.deleteBackward()
+    }
+}

@@ -19,9 +19,9 @@ class HomeViewController: BaseViewController, BaseViewControllerProtocol {
     // init view model
     private(set) var viewModel: HomeViewModel!
     
-    init(_ data: AccountData) {
+    init() {
         super.init(nibName: nil, bundle: nil)
-        viewModel = HomeViewModel(data)
+        viewModel = HomeViewModel()
     }
     
     required init?(coder: NSCoder) {

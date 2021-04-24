@@ -25,6 +25,9 @@
 		0490AC8926326C9300069876 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490AC8726326C9300069876 /* HomeViewController.swift */; };
 		0490AC8A26326C9300069876 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0490AC8826326C9300069876 /* HomeViewController.xib */; };
 		0490AC8D2632AC6500069876 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490AC8C2632AC6500069876 /* String+Extension.swift */; };
+		4F7CF02E2633C6690025C25E /* VerifyCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7CF02D2633C6690025C25E /* VerifyCodeViewModel.swift */; };
+		4F7CF0322633C6740025C25E /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7CF0302633C6740025C25E /* VerifyCodeViewController.swift */; };
+		4F7CF0332633C6740025C25E /* VerifyCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7CF0312633C6740025C25E /* VerifyCodeViewController.xib */; };
 		651A5315D26898B46FE44929 /* Pods_Login_MVVM_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5D58952A8A24D0FA29BA718 /* Pods_Login_MVVM_RxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +53,9 @@
 		0490AC8826326C9300069876 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0490AC8C2632AC6500069876 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		0F2523587C5D4361560DA1D0 /* Pods-Login_MVVM_RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login_MVVM_RxSwift.release.xcconfig"; path = "Target Support Files/Pods-Login_MVVM_RxSwift/Pods-Login_MVVM_RxSwift.release.xcconfig"; sourceTree = "<group>"; };
+		4F7CF02D2633C6690025C25E /* VerifyCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewModel.swift; sourceTree = "<group>"; };
+		4F7CF0302633C6740025C25E /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
+		4F7CF0312633C6740025C25E /* VerifyCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerifyCodeViewController.xib; sourceTree = "<group>"; };
 		B084B853AF8E6058C01004E8 /* Pods-Login_MVVM_RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login_MVVM_RxSwift.debug.xcconfig"; path = "Target Support Files/Pods-Login_MVVM_RxSwift/Pods-Login_MVVM_RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		C5D58952A8A24D0FA29BA718 /* Pods_Login_MVVM_RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Login_MVVM_RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -128,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				043CE6DC2631FBDD00825E78 /* Login */,
+				4F7CF02C2633C62F0025C25E /* VerifyCode */,
 				043CE6F62632066500825E78 /* Register */,
 				0490AC8226326C6D00069876 /* Home */,
 			);
@@ -191,6 +198,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4F7CF02C2633C62F0025C25E /* VerifyCode */ = {
+			isa = PBXGroup;
+			children = (
+				4F7CF02D2633C6690025C25E /* VerifyCodeViewModel.swift */,
+				4F7CF0302633C6740025C25E /* VerifyCodeViewController.swift */,
+				4F7CF0312633C6740025C25E /* VerifyCodeViewController.xib */,
+			);
+			path = VerifyCode;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -252,6 +269,7 @@
 			files = (
 				043CE6EF2632003100825E78 /* Login.storyboard in Resources */,
 				043CE6A42631F68600825E78 /* LaunchScreen.storyboard in Resources */,
+				4F7CF0332633C6740025C25E /* VerifyCodeViewController.xib in Resources */,
 				0490AC8A26326C9300069876 /* HomeViewController.xib in Resources */,
 				043CE6A12631F68600825E78 /* Assets.xcassets in Resources */,
 				043CE6FA263206FF00825E78 /* RegisterViewController.xib in Resources */,
@@ -308,7 +326,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				043CE6F9263206FF00825E78 /* RegisterViewController.swift in Sources */,
+				4F7CF0322633C6740025C25E /* VerifyCodeViewController.swift in Sources */,
 				0490AC8426326C8100069876 /* HomeViewModel.swift in Sources */,
+				4F7CF02E2633C6690025C25E /* VerifyCodeViewModel.swift in Sources */,
 				043CE6FE2632070E00825E78 /* RegisterViewModel.swift in Sources */,
 				043CE6BA2631F87200825E78 /* BaseViewModelChange.swift in Sources */,
 				043CE6BD2631F88C00825E78 /* DataManager.swift in Sources */,
