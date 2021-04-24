@@ -16,17 +16,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keno_logo" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-fj-hsh">
-                                <rect key="frame" x="87" y="412" width="240" height="72"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keno" translatesAutoresizingMaskIntoConstraints="NO" id="qrL-Ah-V1M">
+                                <rect key="frame" x="60" y="192" width="294" height="512"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="OSV-fj-hsh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="p8M-sl-avA"/>
-                            <constraint firstItem="OSV-fj-hsh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vAA-9p-BEt"/>
+                            <constraint firstItem="qrL-Ah-V1M" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DGw-6Y-cCX"/>
+                            <constraint firstItem="qrL-Ah-V1M" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Yyr-ef-akp"/>
+                            <constraint firstItem="qrL-Ah-V1M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="wa3-ne-Ni8"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="keno_logo" width="240" height="72"/>
+        <image name="keno" width="512" height="512"/>
     </resources>
 </document>

@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class VerifyCodeViewController: BaseViewController, BaseViewControllerProtocol {
     
@@ -18,15 +20,31 @@ class VerifyCodeViewController: BaseViewController, BaseViewControllerProtocol {
     @IBOutlet weak var tfNumber3: UITextFieldModern!
     @IBOutlet weak var tfNumber4: UITextFieldModern!
     
+    @IBOutlet weak var viewNumber1: UIView!
+    @IBOutlet weak var viewNumber2: UIView!
+    @IBOutlet weak var viewNumber3: UIView!
+    @IBOutlet weak var viewNumber4: UIView!
+    
+    @IBOutlet weak var btnback: UIButton!
+    @IBOutlet weak var btnCoutDown: UIButton!
+    
     // init view model
     private(set) var viewModel: VerifyCodeViewModel!
     
     var texFieldFocus: UITextField!
     
+    init(_ phone: String) {
+        super.init(nibName: nil, bundle: nil)
+        viewModel = VerifyCodeViewModel(phone)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        viewModel = VerifyCodeViewModel()
         setupViewController()
     }
 
@@ -40,22 +58,58 @@ class VerifyCodeViewController: BaseViewController, BaseViewControllerProtocol {
         tfNumber1.delegateBackward = self
         tfNumber2.delegateBackward = self
         tfNumber3.delegateBackward = self
-        tfNumber3.delegateBackward = self
+        tfNumber4.delegateBackward = self
         
-        texFieldFocus = tfNumber1
+        setBecomeFirstResponder(tfNumber1)
         
-        lblTitle.text = "Thamks!\nPlease verify your\nphone number"
+        lblTitle.text = "Thanks!\nPlease verify your\nphone number"
     }
     
     // setup MVVM
     func bindViewModel() {
+        bindPhoneNumber()
+        bindTimeOut()
         bindModelChange()
+        bindTextField()
+        bindButton()
     }
     
 }
 
 // MARK: bind data MVVM
 extension VerifyCodeViewController {
+    
+    // handle phone number
+    func bindPhoneNumber() {
+        viewModel.phone.asObservable()
+            .subscribe(onNext: { [unowned self] phone in
+                lblPhone.text = phone
+            })
+            .disposed(by: viewModel.disposeBag)
+    }
+    
+    // handle time out
+    func bindTimeOut() {
+        Observable<Int>
+            .interval(.seconds(1), scheduler: MainScheduler.instance)
+            .bind { [unowned self] _ in
+                let countDown = viewModel.timeOut.value - 1
+                if countDown < 0 { return }
+                viewModel.setTimeOut(countDown)
+                
+                if countDown == 0 {
+                    btnCoutDown.setTitle("Resend OTP", for: .normal)
+                    btnCoutDown.backgroundColor = .systemBlue
+                } else {
+                    UIView.transition(with: btnCoutDown, duration: 0.5, options: .transitionCrossDissolve, animations: {
+                        let time = countDown < 10 ? "0\(countDown)" : "\(countDown)"
+                        btnCoutDown.setTitle("Resend code in: 00:\(time)", for: .normal)
+                        btnCoutDown.backgroundColor = .black
+                    }, completion: nil)
+                }
+            }
+            .disposed(by: viewModel.disposeBag)
+    }
     
     // handle model change
     func bindModelChange() {
@@ -68,6 +122,9 @@ extension VerifyCodeViewController {
                 case .loaderEnd:
                     hideLoading()
                     break
+                case .updateDataModel:
+                    pushToHomeViewController()
+                    break
                 case .error(let message):
                     showAlert(message: message)
                     break
@@ -78,6 +135,70 @@ extension VerifyCodeViewController {
             .disposed(by: viewModel.disposeBag)
     }
     
+    // handle text field
+    func bindTextField() {
+        tfNumber1.rx.text
+            .orEmpty
+            .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [unowned self] query in
+                if query.isEmpty { return }
+                setBecomeFirstResponder(tfNumber2)
+                viewNumber2.backgroundColor = .systemBlue
+            })
+            .disposed(by: viewModel.disposeBag)
+        
+        tfNumber2.rx.text
+            .orEmpty
+            .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [unowned self] query in
+                if query.isEmpty { return }
+                setBecomeFirstResponder(tfNumber3)
+                viewNumber3.backgroundColor = .systemBlue
+            })
+            .disposed(by: viewModel.disposeBag)
+        
+        tfNumber3.rx.text
+            .orEmpty
+            .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [unowned self] query in
+                if query.isEmpty { return }
+                setBecomeFirstResponder(tfNumber4)
+                viewNumber4.backgroundColor = .systemBlue
+            })
+            .disposed(by: viewModel.disposeBag)
+        
+        tfNumber4.rx.text
+            .orEmpty
+            .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(onNext: { [unowned self] query in
+                let code = "\(tfNumber1.text!)\(tfNumber2.text!)\(tfNumber3.text!)\(tfNumber4.text!)".trim()
+                if code.count < 4 { return }
+                viewModel.handleVerifyCode(code: code)
+            })
+            .disposed(by: viewModel.disposeBag)
+    }
+    
+    // handle button
+    func bindButton() {
+        btnback.rx.controlEvent(.touchUpInside)
+            .asDriver()
+            .drive(onNext: { [unowned self] in
+                popToViewController()
+            })
+            .disposed(by: viewModel.disposeBag)
+        
+        btnCoutDown.rx.controlEvent(.touchUpInside)
+            .asDriver()
+            .drive(onNext: { [unowned self] in
+                if viewModel.timeOut.value != 0 { return }
+                viewModel.setTimeOut()
+            })
+            .disposed(by: viewModel.disposeBag)
+    }
 }
 
 // MARK: handle push view controller
@@ -91,7 +212,7 @@ extension VerifyCodeViewController {
 }
 
 // MARK: handle text field
-extension VerifyCodeViewController: UITextFieldDelegate, textFieldDeleteBackward {
+extension VerifyCodeViewController: UITextFieldDelegate, TextFieldDeleteBackward {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if textField.tag == 10 { return true }
         guard let textFieldText = textField.text,

@@ -14,8 +14,11 @@ class VerifyCodeViewModel {
     // init DisposeBag
     let disposeBag: DisposeBag
     
-    // event enable button register
-    var enableRegister = BehaviorRelay<Bool>(value: false)
+    // phone number verify
+    var phone = BehaviorRelay<String>(value: "")
+    
+    // time out verify code
+    var timeOut = BehaviorRelay<Int>(value: 60)
     
     // event model change
     var modelChange = BehaviorRelay<BaseViewModelChange>(value: .none)
@@ -24,29 +27,28 @@ class VerifyCodeViewModel {
     var fetchDataTime = [0.5, 1, 1.5]
     
     // init
-    init() {
+    init(_ phone: String) {
         disposeBag = DisposeBag()
+        self.phone.accept(phone)
     }
     
-    // check enable button register
-    func handleEnableSave(data: AccountData) {
-        let enable = !data.fullName.trim().isEmpty && !data.phone.trim().isEmpty && !data.email.trim().isEmpty && !data.password.trim().isEmpty
-        enableRegister.accept(enable)
+    // rchange timne out
+    func setTimeOut(_ timeOut: Int = 60) {
+        self.timeOut.accept(timeOut)
     }
     
-    // check data local register
-    func handleRegister(data: AccountData) {
+    // check code verify
+    func handleVerifyCode(code: String) {
         modelChange.accept(.loaderStart)
         
         let time = fetchDataTime.randomElement() ?? 1
         DispatchQueue.main.asyncAfter(deadline: .now() + time) { [unowned self] in
             modelChange.accept(.loaderEnd)
-                        
-            if let _ = DataManager.shared().getInfoAccountData(data: data) {
-                modelChange.accept(.error(message: "Account already exists"))
+                
+            if code == "0110" {
+                modelChange.accept(.updateDataModel(data: nil))
             } else {
-                DataManager.shared().saveAccountData(data: data)
-                modelChange.accept(.updateDataModel(data: data))
+                modelChange.accept(.error(message: "Code is incorrect"))
             }
         }
     }

@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ec7-vG-um1">
-                                <rect key="frame" x="20" y="470" width="374" height="50"/>
+                                <rect key="frame" x="20" y="486.5" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.0" green="0.53333333333333333" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Mmy-dQ-uBU"/>
@@ -43,19 +43,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="TKV-BE-7Js">
-                                <rect key="frame" x="105.5" y="233" width="203" height="87"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="keno_logo" translatesAutoresizingMaskIntoConstraints="NO" id="TKV-BE-7Js">
+                                <rect key="frame" x="87" y="233" width="240" height="72"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JcZ-Os-dq4">
-                                <rect key="frame" x="20" y="430" width="374" height="1"/>
+                                <rect key="frame" x="20" y="446.5" width="374" height="1"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Rad-tp-NYK"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNL-4Q-XCB">
-                                <rect key="frame" x="20" y="380" width="374" height="50"/>
+                                <rect key="frame" x="20" y="396.5" width="374" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cpa-A9-43Z" customClass="NKVPhonePickerTextField" customModule="NKVPhonePicker">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="50"/>
@@ -78,12 +78,20 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE CAR WASH APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5Q-3w-8Ru">
+                                <rect key="frame" x="87" y="305" width="240" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l4D-VH-wff"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ccM-7p-RKj" firstAttribute="leading" secondItem="l4D-VH-wff" secondAttribute="leading" constant="20" id="0fP-t2-n1m"/>
+                            <constraint firstItem="r5Q-3w-8Ru" firstAttribute="top" secondItem="TKV-BE-7Js" secondAttribute="bottom" id="3gQ-8A-LBM"/>
                             <constraint firstItem="uNL-4Q-XCB" firstAttribute="centerX" secondItem="b3G-Di-KOh" secondAttribute="centerX" id="5Eu-ja-579"/>
+                            <constraint firstItem="uNL-4Q-XCB" firstAttribute="top" secondItem="r5Q-3w-8Ru" secondAttribute="bottom" constant="60" id="6zn-1N-D2M"/>
                             <constraint firstItem="ec7-vG-um1" firstAttribute="top" secondItem="uNL-4Q-XCB" secondAttribute="bottom" constant="40" id="77S-SY-Fdh"/>
                             <constraint firstItem="JcZ-Os-dq4" firstAttribute="centerX" secondItem="b3G-Di-KOh" secondAttribute="centerX" id="80C-OE-Hjx"/>
                             <constraint firstItem="TKV-BE-7Js" firstAttribute="centerX" secondItem="b3G-Di-KOh" secondAttribute="centerX" id="KMm-c7-gfl"/>
@@ -93,11 +101,12 @@
                             <constraint firstItem="JcZ-Os-dq4" firstAttribute="top" secondItem="uNL-4Q-XCB" secondAttribute="bottom" id="SfP-9Q-UNB"/>
                             <constraint firstItem="uNL-4Q-XCB" firstAttribute="leading" secondItem="l4D-VH-wff" secondAttribute="leading" constant="20" id="U7S-e9-zQ6"/>
                             <constraint firstItem="TKV-BE-7Js" firstAttribute="top" secondItem="ccM-7p-RKj" secondAttribute="bottom" constant="60" id="WTc-7C-SZQ"/>
+                            <constraint firstItem="r5Q-3w-8Ru" firstAttribute="leading" secondItem="TKV-BE-7Js" secondAttribute="leading" id="a4t-Yf-5F4"/>
                             <constraint firstItem="CiF-1a-fD2" firstAttribute="leading" secondItem="l4D-VH-wff" secondAttribute="leading" constant="20" id="bp0-5b-iqm"/>
-                            <constraint firstItem="uNL-4Q-XCB" firstAttribute="top" secondItem="TKV-BE-7Js" secondAttribute="bottom" constant="60" id="fnf-DW-v6K"/>
                             <constraint firstItem="ec7-vG-um1" firstAttribute="leading" secondItem="l4D-VH-wff" secondAttribute="leading" constant="20" id="iry-VW-hBG"/>
                             <constraint firstItem="ec7-vG-um1" firstAttribute="centerX" secondItem="b3G-Di-KOh" secondAttribute="centerX" id="lbm-a9-hOd"/>
                             <constraint firstItem="CiF-1a-fD2" firstAttribute="top" secondItem="l4D-VH-wff" secondAttribute="top" constant="40" id="mgn-dj-HHk"/>
+                            <constraint firstItem="r5Q-3w-8Ru" firstAttribute="centerX" secondItem="b3G-Di-KOh" secondAttribute="centerX" id="qxv-hL-gHe"/>
                             <constraint firstItem="JcZ-Os-dq4" firstAttribute="leading" secondItem="l4D-VH-wff" secondAttribute="leading" constant="20" id="x19-xu-9gw"/>
                         </constraints>
                     </view>
@@ -131,6 +140,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="203" height="87"/>
+        <image name="keno_logo" width="240" height="72"/>
     </resources>
 </document>

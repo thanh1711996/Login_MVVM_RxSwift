@@ -11,7 +11,7 @@ import Foundation
 enum BaseViewModelChange {
     case loaderStart
     case loaderEnd
-    case updateDataModel(data: Any)
+    case updateDataModel(data: Any?)
     case error(message: String)
     case none
 }

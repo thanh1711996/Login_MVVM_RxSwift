@@ -167,7 +167,8 @@ extension LoginViewController {
     }
     
     func pushToVerifyCodeViewController() {
-        let vc = VerifyCodeViewController()
+        let phone = "+\(tfCode.code ?? "") \(tfPhone.text!)".trim()
+        let vc = VerifyCodeViewController(phone)
         pushToViewController(vc)
     }
 }

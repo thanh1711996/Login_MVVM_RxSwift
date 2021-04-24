@@ -99,13 +99,13 @@ extension UIView {
     }
 }
 
-protocol textFieldDeleteBackward: class {
+protocol TextFieldDeleteBackward: class {
     func deleteBackward()
 }
 
 class UITextFieldModern: UITextField {
     
-    weak var delegateBackward: textFieldDeleteBackward?
+    weak var delegateBackward: TextFieldDeleteBackward?
     
     override func deleteBackward() {
         super.deleteBackward()
