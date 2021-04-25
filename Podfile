@@ -11,5 +11,7 @@ target 'Login_MVVM_RxSwift' do
     pod 'RxCocoa', '6.1.0'
 
     pod 'NKVPhonePicker', '2.1.0'
+    pod 'FSPagerView'
+    pod "ESTabBarController-swift"
     
 end

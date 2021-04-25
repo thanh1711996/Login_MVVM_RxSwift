@@ -1,4 +1,6 @@
 ${PODS_ROOT}/Target Support Files/Pods-Login_MVVM_RxSwift/Pods-Login_MVVM_RxSwift-frameworks.sh
+${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework
+${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework
 ${BUILT_PRODUCTS_DIR}/NKVPhonePicker/NKVPhonePicker.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
 ${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework

@@ -14,6 +14,8 @@ class HomeViewController: BaseViewController, BaseViewControllerProtocol {
     @IBOutlet weak var lblPhone: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     
+    @IBOutlet weak var bannerView: BannerView!
+    
     @IBOutlet weak var btnLogout: UIButton!
     
     // init view model
@@ -36,7 +38,7 @@ class HomeViewController: BaseViewController, BaseViewControllerProtocol {
 
     // setup ui
     func setupUI() {
-        
+        bannerView.setDataBanner(["banner1", "banner2", "banner3"])
     }
     
     // setup MVVM
@@ -55,9 +57,9 @@ extension HomeViewController {
     func bindData() {
         viewModel.accountData.asObservable()
             .subscribe(onNext: { [unowned self] data in
-                lblFullName.text = "Full Name: \(data.fullName)"
-                lblPhone.text = "Phone: \(data.phone)"
-                lblEmail.text = "Email: \(data.email)"
+                lblFullName?.text = "Full Name: \(data.fullName)"
+                lblPhone?.text = "Phone: \(data.phone)"
+                lblEmail?.text = "Email: \(data.email)"
             })
             .disposed(by: viewModel.disposeBag)
     }

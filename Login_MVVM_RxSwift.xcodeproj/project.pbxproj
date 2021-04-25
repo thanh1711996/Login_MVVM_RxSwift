@@ -25,6 +25,8 @@
 		0490AC8926326C9300069876 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490AC8726326C9300069876 /* HomeViewController.swift */; };
 		0490AC8A26326C9300069876 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0490AC8826326C9300069876 /* HomeViewController.xib */; };
 		0490AC8D2632AC6500069876 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490AC8C2632AC6500069876 /* String+Extension.swift */; };
+		0490ACA82634ECD000069876 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490ACA72634ECD000069876 /* BannerView.swift */; };
+		0490ACAB2634ED0600069876 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0490ACAA2634ED0600069876 /* BaseView.swift */; };
 		4F7CF02E2633C6690025C25E /* VerifyCodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7CF02D2633C6690025C25E /* VerifyCodeViewModel.swift */; };
 		4F7CF0322633C6740025C25E /* VerifyCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7CF0302633C6740025C25E /* VerifyCodeViewController.swift */; };
 		4F7CF0332633C6740025C25E /* VerifyCodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F7CF0312633C6740025C25E /* VerifyCodeViewController.xib */; };
@@ -52,6 +54,8 @@
 		0490AC8726326C9300069876 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0490AC8826326C9300069876 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		0490AC8C2632AC6500069876 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		0490ACA72634ECD000069876 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		0490ACAA2634ED0600069876 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		0F2523587C5D4361560DA1D0 /* Pods-Login_MVVM_RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Login_MVVM_RxSwift.release.xcconfig"; path = "Target Support Files/Pods-Login_MVVM_RxSwift/Pods-Login_MVVM_RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 		4F7CF02D2633C6690025C25E /* VerifyCodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewModel.swift; sourceTree = "<group>"; };
 		4F7CF0302633C6740025C25E /* VerifyCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCodeViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 		043CE6B32631F7D500825E78 /* BaseApp */ = {
 			isa = PBXGroup;
 			children = (
+				0490ACA62634ECC200069876 /* CommonView */,
 				043CE6E82631FDA300825E78 /* Base */,
 				043CE6E62631FD9D00825E78 /* Extension */,
 			);
@@ -188,6 +193,15 @@
 				0490AC8826326C9300069876 /* HomeViewController.xib */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		0490ACA62634ECC200069876 /* CommonView */ = {
+			isa = PBXGroup;
+			children = (
+				0490ACA72634ECD000069876 /* BannerView.swift */,
+				0490ACAA2634ED0600069876 /* BaseView.swift */,
+			);
+			path = CommonView;
 			sourceTree = "<group>";
 		};
 		3C232C1D3D76E319193860B8 /* Frameworks */ = {
@@ -328,6 +342,7 @@
 				043CE6F9263206FF00825E78 /* RegisterViewController.swift in Sources */,
 				4F7CF0322633C6740025C25E /* VerifyCodeViewController.swift in Sources */,
 				0490AC8426326C8100069876 /* HomeViewModel.swift in Sources */,
+				0490ACAB2634ED0600069876 /* BaseView.swift in Sources */,
 				4F7CF02E2633C6690025C25E /* VerifyCodeViewModel.swift in Sources */,
 				043CE6FE2632070E00825E78 /* RegisterViewModel.swift in Sources */,
 				043CE6BA2631F87200825E78 /* BaseViewModelChange.swift in Sources */,
@@ -337,6 +352,7 @@
 				043CE6B72631F84700825E78 /* BaseViewController.swift in Sources */,
 				043CE6E22631FC0A00825E78 /* LoginViewController.swift in Sources */,
 				043CE6982631F68400825E78 /* AppDelegate.swift in Sources */,
+				0490ACA82634ECD000069876 /* BannerView.swift in Sources */,
 				043CE69A2631F68400825E78 /* SceneDelegate.swift in Sources */,
 				043CE6DE2631FBF900825E78 /* LoginViewModel.swift in Sources */,
 				0490AC8926326C9300069876 /* HomeViewController.swift in Sources */,

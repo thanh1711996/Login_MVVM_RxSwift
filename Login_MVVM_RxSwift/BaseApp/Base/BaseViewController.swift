@@ -39,7 +39,7 @@ extension BaseViewController {
         viewIndicator.cornerRadius = 8
         viewIndicator.center = view.center
         
-        let ai = UIActivityIndicatorView.init(style: .medium)
+        let ai = UIActivityIndicatorView.init(style: .large)
         ai.color = .white
         ai.startAnimating()
         ai.center = viewIndicator.center

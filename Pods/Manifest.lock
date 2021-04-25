@@ -1,4 +1,6 @@
 PODS:
+  - ESTabBarController-swift (2.8.0)
+  - FSPagerView (0.8.3)
   - NKVPhonePicker (2.1.0)
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
@@ -8,23 +10,29 @@ PODS:
   - RxSwift (6.1.0)
 
 DEPENDENCIES:
+  - ESTabBarController-swift
+  - FSPagerView
   - NKVPhonePicker (= 2.1.0)
   - RxCocoa (= 6.1.0)
   - RxSwift (= 6.1.0)
 
 SPEC REPOS:
   trunk:
+    - ESTabBarController-swift
+    - FSPagerView
     - NKVPhonePicker
     - RxCocoa
     - RxRelay
     - RxSwift
 
 SPEC CHECKSUMS:
+  ESTabBarController-swift: 05593a6ad64700b03c0eb60ff625916370aa4136
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   NKVPhonePicker: 28ea127fb6a9c380e34dc1c56d38afc6fa09f143
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
 
-PODFILE CHECKSUM: a538234365edfa66f1a620d16abecf461a2699d7
+PODFILE CHECKSUM: e2d012cb2f766577809b59b1dfda1c78582fce15
 
 COCOAPODS: 1.10.1

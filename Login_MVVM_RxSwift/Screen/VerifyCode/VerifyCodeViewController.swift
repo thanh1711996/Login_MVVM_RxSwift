@@ -99,12 +99,12 @@ extension VerifyCodeViewController {
                 
                 if countDown == 0 {
                     btnCoutDown.setTitle("Resend OTP", for: .normal)
-                    btnCoutDown.backgroundColor = .systemBlue
+                    btnCoutDown.setTitleColor(.systemBlue, for: .normal)
                 } else {
                     UIView.transition(with: btnCoutDown, duration: 0.5, options: .transitionCrossDissolve, animations: {
                         let time = countDown < 10 ? "0\(countDown)" : "\(countDown)"
                         btnCoutDown.setTitle("Resend code in: 00:\(time)", for: .normal)
-                        btnCoutDown.backgroundColor = .black
+                        btnCoutDown.setTitleColor(.black, for: .normal)
                     }, completion: nil)
                 }
             }
@@ -145,6 +145,7 @@ extension VerifyCodeViewController {
                 if query.isEmpty { return }
                 setBecomeFirstResponder(tfNumber2)
                 viewNumber2.backgroundColor = .systemBlue
+                verifyCode()
             })
             .disposed(by: viewModel.disposeBag)
         
@@ -156,6 +157,7 @@ extension VerifyCodeViewController {
                 if query.isEmpty { return }
                 setBecomeFirstResponder(tfNumber3)
                 viewNumber3.backgroundColor = .systemBlue
+                verifyCode()
             })
             .disposed(by: viewModel.disposeBag)
         
@@ -167,6 +169,7 @@ extension VerifyCodeViewController {
                 if query.isEmpty { return }
                 setBecomeFirstResponder(tfNumber4)
                 viewNumber4.backgroundColor = .systemBlue
+                verifyCode()
             })
             .disposed(by: viewModel.disposeBag)
         
@@ -175,9 +178,7 @@ extension VerifyCodeViewController {
             .debounce(.milliseconds(100), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
             .subscribe(onNext: { [unowned self] query in
-                let code = "\(tfNumber1.text!)\(tfNumber2.text!)\(tfNumber3.text!)\(tfNumber4.text!)".trim()
-                if code.count < 4 { return }
-                viewModel.handleVerifyCode(code: code)
+                verifyCode()
             })
             .disposed(by: viewModel.disposeBag)
     }
@@ -198,6 +199,13 @@ extension VerifyCodeViewController {
                 viewModel.setTimeOut()
             })
             .disposed(by: viewModel.disposeBag)
+    }
+    
+    // check count code
+    func verifyCode() {
+        let code = "\(tfNumber1.text!)\(tfNumber2.text!)\(tfNumber3.text!)\(tfNumber4.text!)".trim()
+        if code.count < 4 { return }
+        viewModel.handleVerifyCode(code: code)
     }
 }
 
